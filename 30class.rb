@@ -9,6 +9,10 @@
 # de cualquier tipo no primitivo. Así, una clase es una especie de plantilla o prototipo de objetos: define
 # los atributos que componen ese tipo de objetos y los métodos que pueden emplearse para trabajar con esos objetos.
 
-class Alumnos
+class Personas
+  
+end
+
+class Alumnos < Personas
   
 end
