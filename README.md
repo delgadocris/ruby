@@ -1,2 +1,31 @@
-# ruby
+# Ruby
 Curso ruby y sintaxis
+
+- Var
+- Number
+- String
+- Array
+- Hash
+- Simbol
+- Bool
+- Range
+- Const
+- If - else
+- Unless
+- Case
+- While
+- For
+- Each - Upto
+- Alcances
+- Find
+- Merge
+- Map - Collect
+- Sort
+- Inject
+- Shovel
+- Method
+- Arguments
+- DRY
+- Abstraction
+- Modular
+- Class
