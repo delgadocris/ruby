@@ -16,3 +16,7 @@ end
 class Alumnos < Personas
   
 end
+
+class Profesores < Personas
+  
+end
