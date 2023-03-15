@@ -16,7 +16,7 @@ Curso ruby y sintaxis
 - While
 - For
 - Each - Upto
-- Alcances
+- Scopes
 - Find
 - Merge
 - Map - Collect
