@@ -1,4 +1,5 @@
 # Herencia: Es el mecanismo por el cual una clase permite heredar las características (atributos y métodos) de otra clase.
+# Sobreescritura de métodos: Una subclase sobreescribe un método de su superclase cuando define un método con las mismas características ( nombre, número y tipo de argumentos) que el método de la superclase.
 
 # Clase padre
 class Persona
@@ -18,11 +19,23 @@ class Persona
   def self.tipo_herencia
     @@tipo.inspect
   end
+
+  def set_idioma(idioma)
+    @idioma = idioma
+  end
+
+  # Sobreescritura de métodos
+  def get_idioma
+    @idioma
+  end
 end
 
 # Clase hijo
 class Profesor < Persona
-
+  # Sobreescritura de métodos
+  def get_idioma
+    @idioma.split(",")
+  end
 end
 
 # Clase hijo
@@ -62,6 +75,7 @@ pablo = Alumno.new("Pablo", "Perez", "pablo@gmail.com", "Ruby")
 
 # Llamado del set
 pablo.telefono = "(0212) 123.00.01"
+pablo.set_idioma("Español")
 
 # Llamado del get
 puts pablo.nombre
@@ -70,14 +84,17 @@ puts pablo.email
 puts pablo.telefono
 puts pablo.curso
 puts pablo.alta
+puts pablo.get_idioma # Llama al método get_idioma de Persona
 
 puts "\nInstancia Alumno David:"
 
 # Instancia Profesor. Uso del constructor de la clase Persona porque Profesor no tiene definido constructor
 david = Profesor.new("David", "Ramirez", "david@gmail.com")
+david.set_idioma("Español, Ingles, Francés")
 puts david.nombre
 puts david.apellido
 puts david.email
+puts david.get_idioma # Llama al método get_idioma de Profesor
 
 puts "\nArreglo de instancias:"
 puts Persona.tipo_herencia
