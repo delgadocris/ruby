@@ -1,5 +1,6 @@
 # Herencia: Es el mecanismo por el cual una clase permite heredar las características (atributos y métodos) de otra clase.
 # Sobreescritura de métodos: Una subclase sobreescribe un método de su superclase cuando define un método con las mismas características ( nombre, número y tipo de argumentos) que el método de la superclase.
+# Herencia implicita: Todas las clases heredan de la clase Objects
 
 # Clase padre
 class Persona
@@ -28,6 +29,10 @@ class Persona
   def get_idioma
     @idioma
   end
+
+  def get_aula
+    "Aula Persona"
+  end
 end
 
 # Clase hijo
@@ -35,6 +40,12 @@ class Profesor < Persona
   # Sobreescritura de métodos
   def get_idioma
     @idioma.split(",")
+  end
+
+  # Super
+  def get_aula
+    mi_aula_padre = super   # Llama a get_aula de la clase Persona (super padre)
+    "Aula Profesor y #{mi_aula_padre}"
   end
 end
 
@@ -50,11 +61,8 @@ class Alumno < Persona
 
   # Constructor de la clase hijo
   def initialize(nombre, apellido, email, curso = "No definido")
+    super(nombre, apellido, email)  # Llama al initialize de la clase Persona (super padre)
     @curso = curso
-    @nombre = nombre
-    @apellido = apellido
-    @email = email
-    @@tipo << self
   end
 
   # Métodos de clase. Acceder a variable de clase con self
@@ -95,6 +103,8 @@ puts david.nombre
 puts david.apellido
 puts david.email
 puts david.get_idioma # Llama al método get_idioma de Profesor
+puts Profesor.instance_methods(false)
+puts david.get_aula   # Llama a metodo get_aula de la clase Profesor, el cual internamente llama a get_aula de la clase Persona
 
 puts "\nArreglo de instancias:"
 puts Persona.tipo_herencia
