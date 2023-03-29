@@ -24,9 +24,22 @@ puts "ARREGLO NUEVA POSICIÓN"
 my_array[3] = "verde"
 puts my_array[3]
 
+puts "ARREGLO NUEVOS ELEMENTOS"
 my_array << "naranja"
 
-puts "TODO EL ARREGLO"
+my_array.push("amarillo")
+
+my_array.insert(1, "morado", "rosa")
+
+my_array.push("fucsia")
+my_array.push("negro")
+
+puts "ELIMINAR ÚLTIMO ELEMENTO DEL ARREGLO #{my_array.pop}"
+
+puts "ELIMINAR ELEMENTO EN LA POSICIÓN INDICADA"
+my_array.delete_at(8)
+
+puts "MOSTRAR TODO EL ARREGLO"
 puts my_array
 
 puts my_array[3].capitalize
